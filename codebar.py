@@ -17,14 +17,14 @@ class Student(Member):
 stephen = Student("Stephen", "he like to learn")
 stephen.about_me()
 class Instructor(Member):
-    def __init__(self, full_name, bio, skills):
+    def __init__(self, full_name, bio, skills=[]):
         super().__init__(full_name)
         self.bio = bio
         self.skills = ["Python", "Javascript", "C++"]
     def add_skill(self, new_skills):
         self.skills.extend(new_skills)
     def test(self):
-        print(f"My name is {self.full_name} I like {self.bio} my skills are{self.skills}") 
+        print(f"My name is {self.full_name} I like {self.bio} my skills are {self.skills}") 
 
 eric = Instructor("Eric", "Duke and puppies", "")
 eric.test()
