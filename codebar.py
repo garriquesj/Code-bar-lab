@@ -10,9 +10,11 @@ class Student:
         self.reason= reason
 # ______________________________________________________
 class Instructor:
-    def __init__(self, full_name, bio, skils)#maybe I should tell it the parameter is a list
+    def __init__(self, full_name, bio, skills)#maybe I should tell it the parameter is a list
         super().__init__(full_name)
         self.bio=bio
-        self.skils=[]#incase of multiple skills?
-
+        self.skills=[]#incase of multiple skills?
+# ______________________________________________________
+    def add_skill(self,new_skills):#take param of skills and self?do put this in or above instructor
+        self.skills.extend(skills)#should extend skill array *****
 # ______________________________________________________
