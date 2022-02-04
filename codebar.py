@@ -45,10 +45,13 @@ class Workshop(Member):
     def print_details(self, ):
         print(f"Workshop - {self.date} - {self.subject}")
         print(f"Students") #couldnt find away to refrence a classes name in an fstring
-        for idx, student in enumerate(self.students):
-            print(f"{idx +1 }. {student.full_name} - {student.reason}")
-            #idx prints the num,  
-        # print(f"")
+        for idx, student in enumerate(self.students):#self means its accessing this dictionary
+            print(f"{idx +1 }. {student.full_name} - {student.reason}")#the object name and key will access a previous 
+            #idx prints the num, 
+        print(f"Instructors") 
+        for idx, instructor in enumerate(self.instructors):
+            print(f"{idx +1}. {instructor.full_name} - {instructor.skills}")
+            print(f"{instructor.bio}")
         # print(f"")
         
         # print(f"Workshop - {self.subject} - {self.date}")
@@ -71,7 +74,7 @@ workshop.add_participant(lena)
 workshop.add_participant(vicky)
 workshop.add_participant(nicole)
 workshop.print_details()
-# xavier.add_participant()
+
 
 
 
