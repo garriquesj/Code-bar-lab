@@ -4,8 +4,8 @@ class Member:
         self.full_name = full_name
     def intro(self):
         print(f"Hello my name is {self.full_name} !")
-jason = Member("jason")
-jason.intro()
+# jason = Member("jason")
+# jason.intro()
 
 class Student(Member):
     def __init__(self, full_name, reason ):
@@ -14,8 +14,8 @@ class Student(Member):
     def about_me(self):
         print(f"{self.full_name} codes because {self.reason}")
 
-stephen = Student("Stephen", "he like to learn")
-stephen.about_me()
+# stephen = Student("Stephen", "he like to learn")
+# stephen.about_me()
 class Instructor(Member):
     def __init__(self, full_name, bio, skills=[]):
         super().__init__(full_name)
@@ -23,12 +23,12 @@ class Instructor(Member):
         self.skills = ["Python", "Javascript", "C++"]
     def add_skill(self, new_skills):
         self.skills.append(new_skills)#how do I take them out of the array
-    def test(self):
-        print(f"My name is {self.full_name} I like {self.bio} my skills are {self.skills}") 
+    # def test(self):
+    #     print(f"My name is {self.full_name} I like {self.bio} my skills are {self.skills}") 
 
-eric = Instructor("Eric", "Duke and puppies", "")
-eric.add_skill("stretching")
-eric.test()
+# eric = Instructor("Eric", "Duke and puppies", "")
+# eric.add_skill("stretching")
+# eric.test()
 
 class Workshops():
     def __init__(self, date, subject, instructors = [], students = []):
@@ -42,14 +42,15 @@ class Workshops():
             self.students.append(memeber)
         else:
             self.instructor.append(memeber)
-
-    def test2(self):
-        print(f'Workshop started on {self.date} and is teaching {self.subject}')
+    def print_details(self, ):
+        print(f"{Workshops} - {self.subject} - {self.date}")
+        # print(f"Workshop - {self.subject} - {self.date}")
+        
 
 
 
 sei = Workshops("12/13/2021", "Software Engineering" )
-sei.test2()
+sei.print_details()
 
 # xavier.add_participant()
 
