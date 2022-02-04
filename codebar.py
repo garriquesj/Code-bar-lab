@@ -30,7 +30,7 @@ class Instructor(Member):
 # eric.add_skill("stretching")
 # eric.test()
 
-class Workshops():
+class Workshop(Member):
     def __init__(self, date, subject, instructors = [], students = []):
         self.date = date
         self.subject = subject
@@ -38,20 +38,39 @@ class Workshops():
         self.students = students
 
     def add_participant(self, member): #can i do a conditonal in here?
-        if type (memeber) is Student:
-            self.students.append(memeber)
+        if type (member) is Student:
+            self.students.append(member)
         else:
-            self.instructor.append(memeber)
+            self.instructors.append(member)
     def print_details(self, ):
-        print(f"{Workshops} - {self.subject} - {self.date}")
+        print(f"Workshop - {self.date} - {self.subject}")
+        print(f"Students") #couldnt find away to refrence a classes name in an fstring
+        for idx, student in enumerate(self.students):
+            print(f"{idx +1 }. {student.full_name} - {student.reason}")
+            #idx prints the num,  
+        # print(f"")
+        # print(f"")
+        
         # print(f"Workshop - {self.subject} - {self.date}")
         
 
 
 
-sei = Workshops("12/13/2021", "Software Engineering" )
-sei.print_details()
+workshop = Workshop("12/03/2014", "Shutl")
 
+jane = Student("Jane Doe", "I am trying to learn programming and need some help")
+lena = Student("Lena Smith", "I am really excited about learning to program!")
+vicky = Instructor("Vicky Python", "I want to help people learn coding.")
+vicky.add_skill("HTML")
+vicky.add_skill("JavaScript")
+nicole = Instructor("Nicole McMillan", "I have been programming for 5 years in Python and want to spread the love")
+nicole.add_skill("Python")
+
+workshop.add_participant(jane)
+workshop.add_participant(lena)
+workshop.add_participant(vicky)
+workshop.add_participant(nicole)
+workshop.print_details()
 # xavier.add_participant()
 
 
