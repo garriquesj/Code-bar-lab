@@ -31,15 +31,27 @@ eric.add_skill("stretching")
 eric.test()
 
 class Workshops():
-    def __init__(self, date, subject, instuctors =[], students=[]):
+    def __init__(self, date, subject, instructors = [], students = []):
         self.date = date
         self.subject = subject
-        self.instructor = instructor
+        self.instructors = instructors #do i make these caps like the class
         self.students = students
-    def add_participant(self, new_member):#can i do a conditonal in here?
-        self.Member.append(new_member)
+
+    def add_participant(self, member): #can i do a conditonal in here?
+        if type (memeber) is Student:
+            self.students.append(memeber)
+        else:
+            self.instructor.append(memeber)
+
+    def test2(self):
+        print(f'Workshop started on {self.date} and is teaching {self.subject}')
 
 
+
+sei = Workshops("12/13/2021", "Software Engineering" )
+sei.test2()
+
+# xavier.add_participant()
 
 
 
