@@ -20,7 +20,7 @@ class Instructor(Member):
     def __init__(self, full_name, bio, skills=[]):
         super().__init__(full_name)
         self.bio = bio
-        self.skills = ["Python", "Javascript", "C++"]
+        self.skills = skills
     def add_skill(self, new_skills):
         self.skills.append(new_skills)#how do I take them out of the array
     # def test(self):
@@ -51,8 +51,8 @@ class Workshop(Member):
         print(f"Instructors") 
         for idx, instructor in enumerate(self.instructors):
             print(f"{idx +1}. {instructor.full_name} - {instructor.skills}")
-            print(f"{instructor.bio}")
-        # print(f"")
+            print(f"    {instructor.bio}")
+
         
         # print(f"Workshop - {self.subject} - {self.date}")
         
