@@ -21,8 +21,10 @@ class Instructor(Member):
         super().__init__(full_name)
         self.bio = bio
         self.skills = skills
+
     def add_skill(self, new_skills):
-        self.skills.append(new_skills)#how do I take them out of the array
+        self.skills.append(new_skills)
+        #how do I take them out of the array
     # def test(self):
     #     print(f"My name is {self.full_name} I like {self.bio} my skills are {self.skills}") 
 
@@ -42,12 +44,14 @@ class Workshop(Member):
             self.students.append(member)
         else:
             self.instructors.append(member)
+
     def print_details(self, ):
         print(f"Workshop - {self.date} - {self.subject}")
         print(f"Students") #couldnt find away to refrence a classes name in an fstring
         for idx, student in enumerate(self.students):#self means its accessing this dictionary
             print(f"{idx +1 }. {student.full_name} - {student.reason}")#the object name and key will access a previous 
             #idx prints the num, 
+        
         print(f"Instructors") 
         for idx, instructor in enumerate(self.instructors):
             print(f"{idx +1}. {instructor.full_name} - {instructor.skills}")
